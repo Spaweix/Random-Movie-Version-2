@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilmÖneri - Keşfetmeye Başla</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+    <div class="overlay"></div> 
+    
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="#" id="nav-home" class="active">Ana Sayfa</a>
+            <a href="#" id="nav-search">Arama</a>
+            <a href="#" id="nav-lists">Film Listeleri</a>
+            <a href="#" id="nav-ai">Akıllı Asistan</a>
+        </div>
+        <div class="nav-auth">
+            <span class="brand-risella">Risella <span class="heart">💙</span></span>
+            <button id="theme-toggle" class="dark-mode-btn">Açık Tema</button>
+        </div>
+    </nav>
+
+    <main class="hero">
+        <div class="logo-area">
+            <span class="sparkle">✨</span>
+            <h1 class="logo-text">FilmÖneri</h1>
+            <span class="sparkle">✨</span>
+        </div>
+
+        <!-- 1. ANA SAYFA BÖLÜMÜ -->
+        <div id="home-section" class="page-section">
+            <p class="subtitle">Türkiye'nin en kapsamlı film öneri platformu.<br><span>Kişiselleştirilmiş film önerileri</span> alın.</p>
+
+            <div id="search-box" class="filter-box" style="display: none; margin-bottom: 10px;">
+                <input type="text" id="search-input" placeholder="Film adı yazın (Örn: Inception)...">
+                <button id="search-btn" class="btn-suggest">🔍 Ara</button>
+            </div>
+
+            <div class="filter-box" id="main-filter-box">
+                <select id="genre-select">
+                    <option value="">Tür seçiniz</option>
+                    <option value="28">Aksiyon</option>
+                    <option value="27">Korku</option>
+                    <option value="878">Bilim Kurgu</option>
+                    <option value="35">Komedi</option>
+                    <option value="18">Dram</option>
+                    <option value="53">Gerilim</option>
+                </select>
+                <select id="platform-select">
+                    <option value="">Platform seçiniz</option>
+                    <option value="netflix">Netflix</option>
+                    <option value="prime">Prime Video</option>
+                    <option value="disney">Disney+</option>
+                </select>
+                <button id="suggest-btn" class="btn-suggest">Film öner</button>
+            </div>
+        </div>
+
+        <!-- 2. FİLM LİSTELERİ BÖLÜMÜ -->
+        <div id="lists-section" class="page-section" style="display: none;">
+            <div class="list-tabs">
+                <button class="list-tab active" data-type="popular">🔥 Popüler</button>
+                <button class="list-tab" data-type="top_rated">⭐ En İyiler</button>
+                <button class="list-tab" data-type="upcoming">🎬 Yakında</button>
+            </div>
+            <div id="movie-grid" class="movie-grid"></div>
+        </div>
+
+        <!-- 3. AKILLI ASİSTAN BÖLÜMÜ -->
+        <div id="ai-section" class="page-section" style="display: none;">
+            <p class="subtitle">Nasıl bir ruh halindesin? Seçimlerini yap, nokta atışı filmini bulayım.</p>
+            <div class="filter-box ai-box">
+                
+                <div class="question-group">
+                    <label>1. Şu an neye ihtiyacın var?</label>
+                    <select id="mood-select">
+                        <option value="">Seçim yap...</option>
+                        <option value="35">Kahkaha atmaya (Komedi)</option>
+                        <option value="18,10749">Duygulanmaya (Dram/Romantik)</option>
+                        <option value="28,53">Adrenalin patlamasına (Aksiyon/Gerilim)</option>
+                        <option value="878,9648">Beyin yakmaya (Bilim Kurgu/Gizem)</option>
+                    </select>
+                </div>
+
+                <div class="question-group">
+                    <label>2. Filmin yaşı nasıl olsun?</label>
+                    <select id="era-select">
+                        <option value="">Farketmez</option>
+                        <option value="classic">Eski Klasikler (2010 Öncesi)</option>
+                        <option value="modern">Yeni ve Popüler (2015 Sonrası)</option>
+                    </select>
+                </div>
+
+                <div class="question-group">
+                    <label>3. Puan beklentin nedir?</label>
+                    <select id="rating-select">
+                        <option value="6">Çerezlik izlenir (6.0+ Puan)</option>
+                        <option value="8">Kesinlikle Başyapıt (8.0+ Puan)</option>
+                    </select>
+                </div>
+
+                <button id="smart-btn" class="btn-suggest ai-btn-special">✨ Sihirli Filmi Bul</button>
+            </div>
+        </div>
+
+        <!-- ORTAK FİLM SONUÇ KARTI -->
+        <div id="result-container" class="result-card">
+            <img id="movie-poster" src="" alt="Film Afişi">
+            <div class="movie-info">
+                <h2 id="movie-title"></h2>
+                <p id="movie-desc"></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
